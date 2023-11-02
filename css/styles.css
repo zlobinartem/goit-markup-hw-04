@@ -151,11 +151,15 @@ img {
     height: 4px;
     position: absolute;
     left: 0;
-    bottom: -4px;
+    bottom: -1px; /* треба - 4 щоб було як в макеті */
     flex-shrink: 0;
     border-radius: 2px;
     background-color: #404BBF;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current-page {
+    color: #404bbf;
 }
 
 .current-page::after {
@@ -207,6 +211,8 @@ img {
     background-position: center;
     background-size: cover;
     padding: 188px 0;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 .hero > .container {
     display: flex;
@@ -239,8 +245,7 @@ img {
     border-style: none;
     border-radius: 4px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-btn:hover,
@@ -264,6 +269,8 @@ img {
 .benefits-list-icon-box {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 112px;
     border-radius: 4px;
     border: 1px solid #8E8F99;
     background: #F4F4FD;
@@ -342,7 +349,8 @@ img {
 
 .team-social-links-box {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /*зайві 2 рядки, можна було б justify-content: space-around;*/
+    gap: 24px;
 }
 
 .team-social-link {
@@ -394,7 +402,8 @@ img {
     width: 100%;
     position: absolute;
     top: 0;
-    left: 100%;
+    right: 0;
+    transform: translateY(100%);
     padding: 40px 32px 164px;
     color:  #F4F4FD;
     font-size: 16px;
@@ -405,7 +414,7 @@ img {
 }
 
 .portfolio-list-item:hover .portfolio-list-img-box-text {
-    transform: translateX(-100%);
+    transform: translateY(0%);
 }
 
 .portfolio-list-info {
@@ -440,7 +449,10 @@ img {
 .page-footer .container {
     display: flex;
     align-items: baseline;
-    gap: 120px;
+}
+
+.footer-info-box {
+    margin-right: 120px;
 }
 
 .page-footer .logo-link {
