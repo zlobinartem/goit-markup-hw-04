@@ -394,6 +394,7 @@ img {
 }
 
 .portfolio-list-img-box {
+    display: block;
     position: relative;
     overflow: hidden;
 }
